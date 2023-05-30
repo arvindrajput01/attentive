@@ -1,11 +1,15 @@
-import Login from "./components/Login";
-
+import Login from "./components/Login/Login";
+import {Routes,Route} from  'react-router-dom'
 
 function App() {
   return (
-    <div className="">
-        <Login />
+    <div>
+
+      <Routes>
+        <Route exact path="/"  element={<Login />} />
+      </Routes>
     </div>
+
   );
 }
 
