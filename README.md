@@ -1,5 +1,6 @@
 The idea to design attentive is to build the microservice application. this is the only frontend part of the application which will
-consume the api to deal with data and logic.
+consume the api for logic and business flow.
+API will be completly design in ruby on rails
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
