@@ -34,7 +34,8 @@ class Login extends Component {
         { 'Access-Control-Allow-Credentials': true }
       )
       .then(response => {
-        console.warn("response", response.data);
+        console.warn("response", response.data.token);
+        localStorage.setItem('token', response.data.token);
       })
       .catch(error => {
         console.log("login error", error);
@@ -43,6 +44,13 @@ class Login extends Component {
     event.preventDefault();
   }
 
+ // const token = localStorage.getItem('token');
+ // import axios from 'axios';
+
+ // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  
+  // Make requests with axios...
+  
   render() {
     const { email, password } = this.state;
 
