@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LoginImg from '../../assets/login.jpg';
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +33,10 @@ class Login extends Component {
         { 'Access-Control-Allow-Credentials': true }
       )
       .then(response => {
-        console.warn("response", response.data.token);
-        localStorage.setItem('token', response.data.token);
+        console.warn("response", response.data.accessToken);
+        localStorage.setItem('accessToken', response.data.accessToken);
+        localStorage.setItem('refereshToken', response.data.refreshToken);
+        this.props.isLogin(true);
       })
       .catch(error => {
         console.log("login error", error);
